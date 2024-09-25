@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "fa8dc868-d0df-478b-88ff-ea5195ee3d7b",
+		"name": "E-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32563916"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product api",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date\": \"2024-06-21\",\r\n  \"shift\": \"A\",\r\n  \"calibration\": \"Calibrated\",\r\n  \"userId\": 2,\r\n  \"phchecksheetform\": [\r\n    {\r\n      \"time\": \"2024-06-21T10:35:07Z\",\r\n      \"greaseTrap1\": \"Test\",\r\n      \"treatmentwell\": \"Yes\",\r\n      \"greaseTrap3\": \"xyz\",\r\n      \"citySanitarySewer\": \"Clear\",\r\n      \"incomingWaterPH\": \"7.2\",\r\n      \"cookInitialsIniciales\": \"EF\",\r\n      \"productionSupInitials\": \"GH\",\r\n      \"Comments\": \"xyz.\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/phCheckSheetPDF/phCheckSheetPDF",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"phCheckSheetPDF",
+								"phCheckSheetPDF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:5000/api/v1/dailyReportSheetPDF/",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"dailyReportSheetPDF",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:5000/api/v1/dailyReportSheetPDF/",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"dailyReportSheetPDF",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Product API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:5000/api/v1/dailyReportSheetPDF/",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"dailyReportSheetPDF",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Favourite Product API",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 2,\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Product/favouriteProduct",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Product",
+								"favouriteProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Favourite Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Product/AllFavouriteProduct",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Product",
+								"AllFavouriteProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Product/AllFavouriteProduct",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Product",
+								"AllFavouriteProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Product/AllFavouriteProduct",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Product",
+								"AllFavouriteProduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@site.com\",\r\n    \"password\":\"123_Orangez\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
