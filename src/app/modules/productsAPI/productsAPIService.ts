@@ -47,6 +47,7 @@ export const productsAPIService = {
                 body.reviews?.map((review: any) => ({
                   rating: review.rating,
                   comment: review.comment,
+                  date:review.date,
                   reviewerName: review.reviewerName,
                   reviewerEmail: review.reviewerEmail,
                 })) ?? [],

@@ -11,7 +11,7 @@ exports.productsAPISchema = {
             properties: {
                 categoryName: { type: "string" },
             },
-            required: []
+            required: [],
         },
         price: { type: "number" },
         discountPercentage: { type: "number" },
@@ -19,7 +19,7 @@ exports.productsAPISchema = {
         stock: { type: "integer" },
         tags: {
             type: "array",
-            items: { type: "string" }
+            items: { type: "string" },
         },
         brand: { type: "string" },
         sku: { type: "string" },
@@ -29,9 +29,9 @@ exports.productsAPISchema = {
             properties: {
                 width: { type: "number" },
                 height: { type: "number" },
-                depth: { type: "number" }
+                depth: { type: "number" },
             },
-            required: ["width", "height", "depth"]
+            required: ["width", "height", "depth"],
         },
         warrantyInformation: { type: "string" },
         shippingInformation: { type: "string" },
@@ -43,18 +43,19 @@ exports.productsAPISchema = {
                 properties: {
                     rating: { type: "integer" },
                     comment: { type: "string" },
+                    date: { type: "string", format: "date-time" },
                     reviewerName: { type: "string" },
-                    reviewerEmail: { type: "string" }
+                    reviewerEmail: { type: "string" },
                 },
-                required: []
-            }
+                required: [],
+            },
         },
         imagesURL: {
             type: "array",
-            items: { type: "string" }
+            items: { type: "string" },
         },
-        thumbnail: { type: "string" }
+        thumbnail: { type: "string" },
     },
     required: [],
-    additionalProperties: false
+    additionalProperties: false,
 };

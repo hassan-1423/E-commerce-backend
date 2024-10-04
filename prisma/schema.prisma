@@ -79,7 +79,7 @@ model Review {
   id            Int      @id @default(autoincrement())
   rating        Int
   comment       String
-  date          DateTime
+  date          DateTime?
   reviewerName  String
   reviewerEmail String
   productId     Int

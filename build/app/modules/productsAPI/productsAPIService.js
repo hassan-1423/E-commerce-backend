@@ -44,6 +44,7 @@ exports.productsAPIService = {
                             data: body.reviews?.map((review) => ({
                                 rating: review.rating,
                                 comment: review.comment,
+                                date: review.date,
                                 reviewerName: review.reviewerName,
                                 reviewerEmail: review.reviewerEmail,
                             })) ?? [],
