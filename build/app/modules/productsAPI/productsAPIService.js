@@ -9,7 +9,11 @@ exports.productsAPIService = {
                 data: {
                     title: body.title,
                     description: body.description,
-                    category: body.category,
+                    category: {
+                        create: {
+                            categoryName: body.category.categoryName,
+                        },
+                    },
                     price: body.price,
                     discountPercentage: body.discountPercentage,
                     rating: body.rating,
@@ -40,7 +44,6 @@ exports.productsAPIService = {
                             data: body.reviews?.map((review) => ({
                                 rating: review.rating,
                                 comment: review.comment,
-                                date: review.date,
                                 reviewerName: review.reviewerName,
                                 reviewerEmail: review.reviewerEmail,
                             })) ?? [],
@@ -131,8 +134,10 @@ exports.productsAPIService = {
                         },
                         {
                             category: {
-                                contains: body.q,
-                                mode: "insensitive",
+                                categoryName: {
+                                    contains: body.q,
+                                    mode: "insensitive",
+                                },
                             },
                         },
                     ],

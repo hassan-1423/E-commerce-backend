@@ -34,7 +34,6 @@ model Product {
   id                  Int        @id @default(autoincrement())
   title               String
   description         String
-  category            String
   price               Float
   discountPercentage  Float
   rating              Float
@@ -52,6 +51,14 @@ model Product {
   imagesURL           String[]
   thumbnail           String
   favorites           Favorite[]
+  category            category?  @relation(fields: [categoryId], references: [id])
+  categoryId          Int?
+}
+
+model category {
+  id           Int       @id @default(autoincrement())
+  categoryName String
+  products     Product[]
 }
 
 model Tag {

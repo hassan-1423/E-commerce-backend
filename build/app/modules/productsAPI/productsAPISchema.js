@@ -6,7 +6,13 @@ exports.productsAPISchema = {
     properties: {
         title: { type: "string" },
         description: { type: "string" },
-        category: { type: "string" },
+        category: {
+            type: "object",
+            properties: {
+                categoryName: { type: "string" },
+            },
+            required: []
+        },
         price: { type: "number" },
         discountPercentage: { type: "number" },
         rating: { type: "number" },

@@ -10,7 +10,11 @@ export const productsAPIService = {
         data: {
           title: body.title,
           description: body.description,
-          category: body.category,
+          category: {
+            create: {
+              categoryName: body.category.categoryName,
+            },
+          },
           price: body.price,
           discountPercentage: body.discountPercentage,
           rating: body.rating,
@@ -43,23 +47,22 @@ export const productsAPIService = {
                 body.reviews?.map((review: any) => ({
                   rating: review.rating,
                   comment: review.comment,
-                  date: review.date,
                   reviewerName: review.reviewerName,
                   reviewerEmail: review.reviewerEmail,
                 })) ?? [],
             },
           },
         },
-      })
+      });
 
-      console.log("Product record created successfully")
+      console.log("Product record created successfully");
       return {
         status: "success",
         product,
-      }
+      };
     } catch (error) {
-      console.error("Error creating product record:", error)
-      throw error // Re-throwing the error to be handled by the caller
+      console.error("Error creating product record:", error);
+      throw error; // Re-throwing the error to be handled by the caller
     }
   },
   async GetProducts(body: any) {
@@ -141,30 +144,33 @@ export const productsAPIService = {
             },
             {
               category: {
-                contains: body.q,
-                mode: "insensitive", // Case-insensitive search
+                categoryName: {
+                  contains: body.q,
+                  mode: "insensitive", // Case-insensitive search
+                },
               },
             },
           ],
         },
-      })
-
+      });
+  
       if (products.length === 0) {
         return {
           status: "error",
           message: "No products found",
-        }
+        };
       }
-
+  
       return {
         status: "success",
         data: products,
-      }
+      };
     } catch (error) {
-      console.error("Error fetching products by search:", error)
-      throw error
+      console.error("Error fetching products by search:", error);
+      throw error;
     }
   },
+  
   async deleteProduct(body: any) {
     try {
       const deletedProduct = await db.product.delete({
